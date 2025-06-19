@@ -14,4 +14,18 @@ class Publicacion(models.Model):
         self.save()
     def __str__(self):
         return self.titulo
-#kk
+
+class Pecera(models.Model):
+    usuario=models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)
+    fecha_creacion = models.DateTimeField(default=timezone.now)
+    nombre = models.CharField(max_length=50)
+    tipo_agua = models.CharField(max_length=10)
+    capacidad_litros = models.IntegerField()
+    peces = models.TextField()
+    fecha_ultimo_mantenimiento = models.DateTimeField(blank=True, null=True)
+    iluminacion_led = models.BooleanField(default=False)
+    observaciones = models.TextField()
+
+    def __str__(self):
+        return self.nombre
+

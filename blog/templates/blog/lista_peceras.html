@@ -1,0 +1,15 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>Lista de peceras</h1>
+        {% for pecera in peceras %}
+            <h2>Nombre de la pecera: {{pecera.nombre}} | <i>Creado por: {{pecera.usuario}}</i></h2>
+            <p>Capacidad: {{pecera.capacidad_litros}} litros</p>
+            <p>Tipo de agua: {{pecera.tipo_agua}}</p>
+            <p>Lista de peces: <i>{{pecera.peces}} </i></p>
+            <hr>
+        {%endfor%}
+    </body>
+</html>
